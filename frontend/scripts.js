@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', function () {
       backgroundColor: '#fef8ff',
     },
     title: {
-      text: 'Results',
+      text: '',
     },
     xAxis: {
       categories: ['Coke', 'Diet Coke', 'Coke Zero'],
     },
     yAxis: {
       title: {
-        text: 'Votes',
+        text: '',
       },
     },
     credits: {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     series: [
       {
-        name: 'Jane',
+        name: 'Votes',
         selected: true,
         data: [1, 20, 4],
       },
