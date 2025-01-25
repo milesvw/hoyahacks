@@ -15,5 +15,5 @@ body {
 }
 input:hover, select:hover {
   border-color: transparent;
-  box-shadow: 0 0 0 5px rgb(212, 58, 65);
+  box-shadow: 0 0 0 5px var(--red);
 }
