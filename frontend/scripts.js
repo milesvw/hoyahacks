@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const chart = Highcharts.chart('container', {
     chart: {
       type: 'bar',
+      backgroundColor: '#fef8ff',
     },
     title: {
       text: 'Results',
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         selected: true,
         data: [1, 20, 4],
       },
+      
     ],
   });
 });
