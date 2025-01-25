@@ -5,10 +5,15 @@
   --dark-brown: #310505;
   --light-brown: #661f17;
   --orange-brown: #ac4b36;
+  text-align: center
 }
 body {
   background-color: var(--white);
 }
 .title-h1 {
   color: var(--red);
+}
+input:hover, select:hover {
+  border-color: transparent;
+  box-shadow: 0 0 0 5px rgb(255, 0, 0);
 }
