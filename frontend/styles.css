@@ -20,7 +20,7 @@ input:hover, select:hover {
 
 @import url("/css/highcharts.css");
 
-#container{
-  background: #fef8ff;
+body{
+  background-color: var(--white);
 }
 
