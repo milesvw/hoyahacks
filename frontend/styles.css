@@ -6,9 +6,8 @@
   --light-brown: #661f17;
   --orange-brown: #ac4b36;
 }
-
 body {
-  background-color: var(--black);
+  background-color: var(--white);
 }
 .title-h1 {
   color: var(--red);
