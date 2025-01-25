@@ -19,3 +19,8 @@ input:hover, select:hover {
 }
 
 @import url("/css/highcharts.css");
+
+#container{
+  background: #f8f8f8;
+}
+
