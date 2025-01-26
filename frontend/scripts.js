@@ -28,6 +28,7 @@ function createChart(data) {
     console.log(data);
 
     const ctx = document.getElementById('container').getContext('2d');
+    
     chart = new Chart(ctx, {
         type: 'bar',  // 'bar', 'line', 'pie', etc.
         data: {
