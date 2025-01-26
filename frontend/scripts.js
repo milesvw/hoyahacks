@@ -2,69 +2,71 @@ let chart;
 
 async function fetchPollData() {
     try {
-        console.log('Fetching data...');
         const response = await fetch('http://localhost:3000/flavors');
-        const data = await response.json();
+        let data = await response.json();
+
+        data = data.map(flavor => ({
+            name: flavor.name,
+            votes: flavor.y
+        }));
 
         if (chart) {
             // Updates chart with new data
-            console.log('Updating chart')
+            console.log('Updating chart');
             updateChart(data);
-        }
-        else {
-            // Creates new chart if doesn't exist yet (?)
-            console.log('Creating chart')
+        } else {
+            // Creates new chart if doesn't exist yet
+            console.log('Creating chart');
             createChart(data);
         }
-    }
-    catch (error) {
+    } catch (error) {
         console.error('Error fetching poll data:', error);
     }
 }
 
-function createChart(data)  {
+function createChart(data) {
     console.log(data);
-    chart = Highcharts.chart('container', {
-        chart: {
-            type: 'bar',
-            style: {
-                fontFamily: 'Arial, sans-serif'
-            }
+
+    const ctx = document.getElementById('container').getContext('2d');
+    chart = new Chart(ctx, {
+        type: 'bar',  // 'bar', 'line', 'pie', etc.
+        data: {
+            labels: data.map(flavor => flavor.name),  // x-axis labels
+            datasets: [{
+                label: 'Votes',
+                data: data.map(flavor => flavor.votes),  // y-axis data
+                backgroundColor: '#d43a41',
+                borderColor: '#a32a2f',
+                borderWidth: 1
+            }]
         },
-        title: {
-            text: 'Results',
-            style: {
-                color: '#d43a41',
-                fontSize: '20px'
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Flavor'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Votes'
+                    }
+                }
             }
-        },
-        xAxis: {
-            categories: data.map(flavor => flavor.name),
-            title: {
-                text: 'Flavor',
-                style: { color: '#d43a41' }
-            }
-        },
-        yAxis: {
-            title: {
-                text: 'Votes',
-                style: { 
-                    color: '#d43a41' }
-            }
-        },
-        series: [{
-            name: 'Votes',
-            data: data.map(flavor => flavor.votes),
-            color: '#d43a41'
-        }]
+        }
     });
 }
 
 function updateChart(data) {
-    chart.xAxis[0].setCategories(data.map(flavor => flavor.name));
-    chart.series[0].setData(data.map(flavor => flavor.votes));
-    chart.redraw(); // Redraws to reflect current updated data
-    console.log('Actually updating chart:', data);
+    if (chart) {
+        chart.data.labels = data.map(flavor => flavor.name);
+        chart.data.datasets[0].data = data.map(flavor => flavor.votes);
+        chart.update(); // Re-renders the chart with new data
+        console.log('Chart updated');
+    }
 }
 
 // Submits vote and fetches new data after submitting
@@ -73,7 +75,7 @@ document.getElementById('poll-form').addEventListener('submit', async function(e
 
     const selectedFlavor = document.querySelector('input[name="flavor"]:checked')?.value;
 
-    if(!selectedFlavor) {
+    if (!selectedFlavor) {
         alert('Please select a flavor');
         return;
     }
@@ -89,9 +91,9 @@ document.getElementById('poll-form').addEventListener('submit', async function(e
 
         // Fetches updated data
         fetchPollData();
-    }
-    catch (error) {
+    } catch (error) {
         console.error('Error submitting vote:', error);
     }
 });
+
 window.onload = fetchPollData;

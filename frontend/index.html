@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coke Vote</title>
     <link href="styles.css" rel="stylesheet" />
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <img src="images/coca-cola-logo.png" alt="Coca Cola logo" width="500" />
@@ -62,8 +64,8 @@
         <div class="option">
           <label>
             <img src="images/coke_cans/coke_caffine_free.png" alt="caffine free coke can" width="75" />
-            <input type="radio" name="flavor" value="Caffine Free Coke" />
-            Caffine Free Coke
+            <input type="radio" name="flavor" value="Caffeine Free Coke" />
+            Caffeine Free Coke
           </label>
         </div>
         </div>
@@ -71,8 +73,8 @@
       </form>
     </div>
     
-    <div id="container" style="width:70%; height:400px;"></div>
-    
+    <canvas id="container" width="400" height="200"></canvas>
+
     <script src="scripts.js"></script>
   </body>
 </html>

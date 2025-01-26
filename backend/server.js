@@ -55,14 +55,14 @@ server.post('/poll', (req, res) => {
         
         const flavorId = results[0].id;
 
-        pool.query('INSERT INTO poll_results (flavor_id) VALUES (?)', [flavorId], (err, results) => {
+        pool.query('INSERT INTO poll_results (flavor_id) VALUES (?)', [flavorId], (errs) => {
             if (err) {
                 console.error('Error inserting data: ', err);
                 res.status(500).json({ error: 'Database insertion failed' });
                 return;
             }
             
-            pool.query('UPDATE flavors SET votes = votes + 1 WHERE id = ?', [flavorId], (err, results) => {
+            pool.query('UPDATE flavors SET votes = votes + 1 WHERE id = ?', [flavorId], (err) => {
                 if (err) {
                     console.error('Error updating flavor votes: ', err);
                     res.status(500).json({ error: 'Failed to update flavor votes' });
