@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --white: #fef8ff;
   --black: #020409;
   --red: #d43a41;
@@ -20,7 +20,143 @@ input:hover, select:hover {
 
 @import url("/css/highcharts.css");
 
+#container{
+  background: #fef8ff;
+  width: 70%;
+  height: 400px;
+  margin: 20px auto;
+  border: 1px solid #d43a41;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+/* styles.css */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.header {
+  text-align: center;
+  background-color: #e60000;
+  padding: 10px;
+  color: #f4f4f4;
+}
+
+.main-title {
+  font-size: 200px;
+  margin-bottom: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+.poll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
 body{
   background-color: var(--white);
 }
 
+.poll-question {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.poll-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 0 20px;
+  width: 60%;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Option hover effect */
+.option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  background-color: #f9f9f9;
+}
+
+/* Image hover effect */
+.option:hover .option-image {
+  transform: scale(1.1);
+}
+
+/* Input (Radio Button) */
+input[type='radio'] {
+  display: none; /* Hide the radio button */
+}
+
+input[type='radio'] + label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  border: 2px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+/* Radio Button appearance when selected */
+input[type='radio']:checked + label {
+  background-color: #e60000;
+  color: white;
+  border-color: #e60000;
+}
+
+input[type='radio']:checked + label .option-text {
+  font-weight: bold;
+}
+
+input[type='radio']:checked + label .option-image {
+  transform: scale(1.1);
+}
+
+/* Hover effect for radio label */
+input[type='radio']:not(:checked) + label:hover {
+  background-color: #f9f9f9;
+  border-color: #e60000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.vote-button {
+  background-color: #e60000;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-left: 160%;
+}
+
+button.vote-button:hover {
+  background-color: #c10000;
+}
+
+canvas {
+  max-width: 60%;
+  margin-left: 300px;
+  margin-top: 150px;
+  margin-bottom: 20px;
+}

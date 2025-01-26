@@ -5,77 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coke Vote</title>
     <link href="styles.css" rel="stylesheet" />
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <img src="images/coca-cola-logo.png" alt="Coca Cola logo" width="500" />
-    <h1 class="title-h1">Coke Vote</h1>
+    <div class="header">
+      <h1 class="main-title">Coke Vote</h1>
+      <img src="images/coca-cola-logo.png" alt="Coca Cola logo" class="logo" />
+    </div>
 
-    <hr />
-
-    <div class="polldiv">
+    <div class="poll-container">
       <h2 class="poll-question">What is your favorite Coca Cola flavor?</h2>
 
-      <form id="poll-form">
+      <form id="poll-form" class="poll-form">
         <div class="option">
           <label>
-            <img src="images/coke_cans/coca_cola.png" alt="coca cola can" width="75" />
+            <img src="images/coke_cans/coca_cola.png" alt="Coca Cola can" width="75" />
             <input type="radio" name="flavor" value="Coca Cola" required />
             Coca Cola‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ 
           </label>
         </div>
         <div class="option">
           <label>
-            <img src="images/coke_cans/diet_coke.png" alt="diet coke can" width="75" />
+            <img src="images/coke_cans/diet_coke.png" alt="Diet Coke can" width="75" />
             <input type="radio" name="flavor" value="Diet Coke" />
             Diet Coke‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ 
           </label>
         </div>
         <div class="option">
           <label>
-            <img src="images/coke_cans/coke_zero_sugar.png" alt="coke zero can" width="75" />
+            <img src="images/coke_cans/coke_zero_sugar.png" alt="Coke Zero can" width="75" />
             <input type="radio" name="flavor" value="Coke Zero" />
             Coke Zero‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ 
           </label>
         </div>
         <div class="option">
           <label>
-            <img src="images/coke_cans/coke_cherry.png" alt="cherry coke can" width="75" />
+            <img src="images/coke_cans/coke_cherry.png" alt="Cherry Coke can" width="60" />
             <input type="radio" name="flavor" value="Cherry Coke" />
             Cherry Coke‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ 
           </label>
         </div>
         <div class="option">
           <label>
-            <img src="images/coke_cans/coke_vanilla.png" alt="vanilla coke can" width="75" />
+            <img src="images/coke_cans/coke_cherry_vanilla.png" alt="Cherry Vanilla Coke can" width="65" />
+            <input type="radio" name="flavor" value="Cherry Vanilla Coke" />
+            Cherry Vanilla
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <img src="images/coke_cans/coke_lemon.png" alt="Lemon Coke can" width="75" />
+            <input type="radio" name="flavor" value="Lemon Coke" />
+            Lemon Coke
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <img src="images/coke_cans/coke_lime.png" alt="Lime Coke can" width="45" />
+            <input type="radio" name="flavor" value="Lime Coke" />
+            Lime Coke
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <img src="images/coke_cans/coke_orange_vanilla.png" alt="Orange Vanilla Coke can" width="75" />
+            <input type="radio" name="flavor" value="Orange Vanilla Coke" />
+            Orange Vanilla Coke
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <img src="images/coke_cans/coke_vanilla.png" alt="Vanilla Coke can" width="75" />
             <input type="radio" name="flavor" value="Vanilla Coke" />
             Vanilla Coke‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ 
           </label>
         </div>
         <div class="option">
           <label>
-            <img src="images/coke_cans/coke_mini.png" alt="mini coke can" width="75" />
-            <input type="radio" name="flavor" value="Coke Mini" />
-            Coke Mini‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ 
+            <img src="images/coke_cans/peach-coke-no-bg.png" alt="Peach Coke can" width="40" />
+            <input type="radio" name="flavor" value="Peach Coke" />
+            Peach Coke
           </label>
         </div>
         <div class="option">
           <label>
-            <img src="images/coke_cans/coke_caffine_free.png" alt="caffine free coke can" width="75" />
-            <input type="radio" name="flavor" value="Caffine Free Coke" />
-            Caffine Free Coke
+            <img src="images/coke_cans/tropical-coke-no-bg.png" alt="Tropical Coke can" width="40" />
+            <input type="radio" name="flavor" value="Tropical Coke" />
+            Tropical Coke
           </label>
         </div>
+
+        <div class="option">
+          <label>
+            <img src="images/coke_cans/coke_caffeine_free.png" alt="Caffeine Free Coke can" width="75" />
+            <input type="radio" name="flavor" value="Caffeine Free Coke" />
+            Caffeine Free
+          </label>
         </div>
-        <button type="submit">Vote</button>
+        <div class="vote-button-container">
+          <button type="submit" class="vote-button">Vote</button>
+        </div>
       </form>
     </div>
 
-    <script src="scripts.js"></script>
-  </body>
+    <canvas id="container" width="400" height="200"></canvas>
 
-  <body>
-    <div id="container" style="width:70%; height:400px;"></div>
     <script src="scripts.js"></script>
   </body>
 </html>
