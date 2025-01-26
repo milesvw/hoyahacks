@@ -22,5 +22,9 @@ input:hover, select:hover {
 
 #container{
   background: #fef8ff;
+  width: 70%;
+  height: 400px;
+  margin: 20px auto;
+  border: 1px solid #d43a41;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
